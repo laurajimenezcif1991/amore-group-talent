@@ -98,17 +98,18 @@ export default function MainSidebar() {
       }}
     >
       {/* Logo */}
-      <div style={{ padding: '20px 20px 16px' }}>
+      <div style={{ padding: '20px 20px 16px', overflow: 'hidden' }}>
         <img
           src={companyLogoUrl || assetUrl('/logo-amore-group.png')}
           alt={companyName || 'Amore Group Talent'}
           style={{
-            maxHeight: '110px',
-            maxWidth: '300px',
-            width: 'auto',
+            maxHeight: '72px',
+            width: '100%',
+            maxWidth: '160px',
             height: 'auto',
             display: 'block',
             objectFit: 'contain',
+            objectPosition: 'left center',
           }}
         />
       </div>
