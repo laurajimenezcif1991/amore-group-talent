@@ -38,7 +38,7 @@ export default function App() {
         <InterviewProvider>
           <WaPrescreeningProvider>
           <PipelineProvider>
-        <BrowserRouter basename="/demo-restaurantes">
+        <BrowserRouter basename="/amore-group-talent">
           <Routes>
             {/* ── Auth (public) ── */}
             <Route path="/auth" element={<AuthPage />} />

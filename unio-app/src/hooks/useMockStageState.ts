@@ -31,7 +31,7 @@ export const DEFAULT_MOCK_PROGRESS: Record<string, MockStageKey> = {
   'mock-comf-gca': 'evaluaciones',
   'mock-comf-gcv': 'evaluaciones',
   'mock-comf-cb':  'evaluaciones',
-  // Demo Restaurantes — Transporte & Logística
+  // Amore Group Talent — Gastronomía & Hospitalidad Italiana
   'mock-transp-pub': 'estudios',
   'mock-vigia':      'estudios',
   'mock-distrib':    'estudios',

@@ -27,8 +27,8 @@ interface PhaseLabel {
 
 const PHASES: PhaseLabel[] = [
   { label: 'Apertura',               startIdx: 0  },
-  { label: 'Licencia y experiencia', startIdx: 3  },
-  { label: 'Historial vial',         startIdx: 6  },
+  { label: 'Experiencia gastronómica', startIdx: 3  },
+  { label: 'Habilidades y actitud',  startIdx: 6  },
   { label: 'Disponibilidad',         startIdx: 9  },
   { label: 'Expectativa salarial',   startIdx: 12 },
   { label: 'Cierre',                 startIdx: 14 },
@@ -50,21 +50,21 @@ function buildConversation(firstName: string, jobTitle: string, aspiration: stri
   };
   return [
     // 0-2 Apertura
-    { from: 'alex',      time: fmt(0),  text: `Hola ${firstName}! 👋 Soy *Alex*, asistente de selección de *Demo Restaurantes*. Tu perfil quedó bien ranqueado para *${jobTitle}*. ¿Tienes unos 10 minutos para una verificación rápida?` },
+    { from: 'alex',      time: fmt(0),  text: `Hola ${firstName}! 👋 Soy *Alex*, asistente de selección de *Amore Group Talent*. Tu perfil quedó bien ranqueado para *${jobTitle}*. ¿Tienes unos 10 minutos para una verificación rápida?` },
     { from: 'candidate', time: fmt(1),  text: '¡Hola! Sí, claro. Cuente 😊' },
     { from: 'alex',      time: fmt(2),  text: '¡Perfecto! Vamos directo a lo que necesitamos verificar para este cargo.' },
-    // 3-5 Experiencia y servicio al cliente
-    { from: 'alex',      time: fmt(3),  text: '¿Cuenta con *mínimo 6 meses de experiencia certificada* en servicio al cliente o atención al público? 🧾' },
-    { from: 'candidate', time: fmt(4),  text: 'Sí, llevo más de 2 años trabajando en restaurantes. Tengo certificación de El Corral y Frisby.' },
-    { from: 'alex',      time: fmt(5),  text: `¡Excelente! ¿En qué áreas ha trabajado principalmente: barra, servicio en mesa, caja o domicilios?` },
-    // 6-8 Disponibilidad y horario
-    { from: 'candidate', time: fmt(6),  text: 'He trabajado en todas las áreas. Me gusta la polifuncionalidad 😊' },
-    { from: 'alex',      time: fmt(7),  text: '¿Tiene *disponibilidad completa para turnos rotativos* de lunes a domingo, sin turno partido? 🗓️' },
-    { from: 'candidate', time: fmt(8),  text: 'Sí, disponibilidad total. Estoy acostumbrado a turnos rotativos incluyendo fines de semana. ✅' },
+    // 3-5 Experiencia gastronómica
+    { from: 'alex',      time: fmt(3),  text: '¿Cuenta con *mínimo 6 meses de experiencia certificada* en servicio al cliente, gastronomía o hospitalidad? 🧾' },
+    { from: 'candidate', time: fmt(4),  text: 'Sí, llevo más de 2 años en el sector de restaurantes. Trabajé en Archie\'s y en un restaurante italiano en el norte de Cali.' },
+    { from: 'alex',      time: fmt(5),  text: `¡Excelente! ¿En qué áreas ha trabajado principalmente: anfitrión, mesero, barra o cocina?` },
+    // 6-8 Habilidades y actitud
+    { from: 'candidate', time: fmt(6),  text: 'He trabajado principalmente en mesa y en barra. Me apasiona crear experiencias para los clientes 🍝' },
+    { from: 'alex',      time: fmt(7),  text: '¿Tiene *disponibilidad completa para turnos rotativos* de lunes a domingo, incluyendo fechas especiales? 🗓️' },
+    { from: 'candidate', time: fmt(8),  text: 'Sí, disponibilidad total. Para mí los fines de semana son los días más especiales en un restaurante. ✅' },
     // 9-11 No negociables adicionales
-    { from: 'alex',      time: fmt(9),  text: '¿Tiene *carné de manipulación de alimentos vigente*? (si no lo tiene, ¿está en disposición de tramitarlo?) 🍽️' },
-    { from: 'candidate', time: fmt(10), text: 'Sí, lo tengo vigente. Lo renuevo cada año.' },
-    { from: 'alex',      time: fmt(11), text: `¿Tiene entre 18 y 34 años de edad?` },
+    { from: 'alex',      time: fmt(9),  text: '¿Cuenta con *carné de manipulación de alimentos vigente*? (si no, ¿está dispuesto/a a tramitarlo antes de ingresar?) 🍽️' },
+    { from: 'candidate', time: fmt(10), text: 'Sí, lo tengo vigente. Lo gestiono cada año sin problema.' },
+    { from: 'alex',      time: fmt(11), text: `¿Tiene entre 18 y 35 años de edad?` },
     // 12-13 Expectativa salarial
     { from: 'candidate', time: fmt(12), text: 'Sí, tengo 27 años. 👍' },
     { from: 'alex',      time: fmt(13), text: `¿Cuál es su expectativa salarial para este cargo?` },
@@ -246,7 +246,7 @@ export default function WhatsAppPreEntrevistaModal({ isOpen, onClose, candidates
                     Pre-entrevista IA por WhatsApp
                   </div>
                   <div style={{ fontSize: '13px', color: '#666', marginTop: '1px' }}>
-                    Alex IA · Demo Restaurantes
+                    Alex IA · Amore Group Talent
                   </div>
                 </div>
                 <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#999', padding: '4px', borderRadius: '8px' }}>
@@ -373,7 +373,7 @@ export default function WhatsAppPreEntrevistaModal({ isOpen, onClose, candidates
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontWeight: 700, fontSize: '14px', color: '#fff' }}>
-                      Alex IA · Demo Restaurantes
+                      Alex IA · Amore Group Talent
                     </div>
                     <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.8)' }}>
                       {isDone ? '✓ Entrevista completada' : isTyping ? (typingFor === 'alex' ? 'escribiendo...' : `${firstName} está escribiendo...`) : 'en línea'}

@@ -20,16 +20,16 @@ type ChatPhase =
   | 'done';
 
 const AM_SLOTS = [
-  'Sáb 21 Jun · 8:00 AM — Demo Restaurantes, Sede Medellín (El Poblado)',
-  'Sáb 21 Jun · 9:30 AM — Demo Restaurantes, Sede Medellín (El Poblado)',
-  'Dom 22 Jun · 8:00 AM — Demo Restaurantes, Sede Medellín (Laureles)',
-  'Sáb 28 Jun · 8:00 AM — Demo Restaurantes, Sede Medellín (El Poblado)',
+  "Sáb 21 Jun · 8:00 AM — Storia D'Amore, Sede Cali (Granada)",
+  "Sáb 21 Jun · 9:30 AM — Storia D'Amore, Sede Cali (Chipichape)",
+  "Dom 22 Jun · 8:00 AM — Storia D'Amore, Sede Bogotá (Usaquén)",
+  "Sáb 28 Jun · 8:00 AM — Storia D'Amore, Sede Barranquilla (El Prado)",
 ];
 const PM_SLOTS = [
-  'Sáb 21 Jun · 2:00 PM — Demo Restaurantes, Sede Medellín (Laureles)',
-  'Dom 22 Jun · 2:00 PM — Demo Restaurantes, Sede Medellín (El Poblado)',
-  'Sáb 28 Jun · 2:30 PM — Demo Restaurantes, Sede Medellín (Laureles)',
-  'Dom 29 Jun · 2:00 PM — Demo Restaurantes, Sede Medellín (El Poblado)',
+  "Sáb 21 Jun · 2:00 PM — Storia D'Amore, Sede Cali (Granada)",
+  "Dom 22 Jun · 2:00 PM — Storia D'Amore, Sede Cali (Chipichape)",
+  "Sáb 28 Jun · 2:30 PM — Storia D'Amore, Sede Bogotá (Usaquén)",
+  "Dom 29 Jun · 2:00 PM — Storia D'Amore, Sede Barranquilla (El Prado)",
 ];
 
 const PHASES_PANEL = [
@@ -53,7 +53,7 @@ function buildOpening(firstName: string, jobTitle: string): WaMsg[] {
     return `${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}`;
   };
   return [
-    { from: 'alex', time: fmt(0), text: `¡Hola ${firstName}! 👋 Soy *Alex*, asistente de selección de *Demo Restaurantes*.` },
+    { from: 'alex', time: fmt(0), text: `¡Hola ${firstName}! 👋 Soy *Alex*, asistente de selección de *Amore Group Talent*.` },
     { from: 'alex', time: fmt(1), text: `🎉 ¡Felicitaciones! Has superado la pre-entrevista para el cargo de *${jobTitle}*. El equipo quedó muy conforme con tu perfil y actitud.` },
     { from: 'alex', time: fmt(2), text: 'El siguiente paso es tu *Entrevista presencial* en uno de nuestros puntos. La entrevista tiene una duración de 30 minutos aproximadamente. ¿Tienes disponibilidad para esta semana? 🍽️' },
     { from: 'alex', time: fmt(3), text: '¿Prefieres una franja en la *mañana (AM)* o en la *tarde (PM)*? 🗓️' },
@@ -314,7 +314,7 @@ export default function WhatsAppAgendarEntrevistaModal({
                     Agendar entrevista por WhatsApp
                   </div>
                   <div style={{ fontSize: '13px', color: '#666', marginTop: '1px' }}>
-                    Alex IA · Demo Restaurantes
+                    Alex IA · Amore Group Talent
                   </div>
                 </div>
                 <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#999', padding: '4px' }}>
@@ -434,7 +434,7 @@ export default function WhatsAppAgendarEntrevistaModal({
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontWeight: 700, fontSize: '14px', color: '#fff' }}>
-                      Alex IA · Demo Restaurantes
+                      Alex IA · Amore Group Talent
                     </div>
                     <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.8)' }}>
                       {isDone

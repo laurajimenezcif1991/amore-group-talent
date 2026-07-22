@@ -20,15 +20,15 @@ export function useVacantes(): UseVacantesResult {
   const { token } = useAuth();
   const [vacantes, setVacantes] = useState<Vacante[]>([]);
   const [rawJobs, setRawJobs] = useState<Job[]>([]);
-  const [logoUrl, setLogoUrl] = useState<string>(assetUrl('/logo-demo-restaurantes.png'));
+  const [logoUrl, setLogoUrl] = useState<string>(assetUrl('/logo-amore-group.png'));
   const [companyName, setCompanyName] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!token) {
-      setLogoUrl(assetUrl('/logo-demo-restaurantes.png'));
-      setCompanyName('Demo Restaurantes');
+      setLogoUrl(assetUrl('/logo-amore-group.png'));
+      setCompanyName('Amore Group Talent');
       setVacantes([...MOCK_VACANTES]);
       setLoading(false);
       return;
@@ -43,8 +43,8 @@ export function useVacantes(): UseVacantesResult {
         if (cancelled) return;
         const jobs = data.jobs ?? [];
         setRawJobs(jobs);
-        setLogoUrl(assetUrl('/logo-demo-restaurantes.png'));
-        setCompanyName('Demo Restaurantes');
+        setLogoUrl(assetUrl('/logo-amore-group.png'));
+        setCompanyName('Amore Group Talent');
         const mapped = jobs
           .filter((j) => !j.title?.toLowerCase().includes('supervisor de almac'))
           .flatMap(mapJobToVacantes);
@@ -53,8 +53,8 @@ export function useVacantes(): UseVacantesResult {
       .catch((err: unknown) => {
         if (cancelled) return;
         setError(err instanceof Error ? err.message : 'Error al cargar vacantes');
-        setLogoUrl(assetUrl('/logo-demo-restaurantes.png'));
-        setCompanyName('Demo Restaurantes');
+        setLogoUrl(assetUrl('/logo-amore-group.png'));
+        setCompanyName('Amore Group Talent');
         setVacantes([...MOCK_VACANTES]);
       })
       .finally(() => {

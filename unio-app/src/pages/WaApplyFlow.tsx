@@ -72,10 +72,10 @@ function now() {
 function uid() { return Math.random().toString(36).slice(2); }
 
 const VACANCY = {
-  title: 'Mesero / Polifuncional',
-  company: 'Demo Restaurantes',
+  title: 'Mesero / Anfitrión de Experiencia',
+  company: 'Amore Group Talent',
   salary: '$1.705.905 + auxilio transporte + auxilio alimentación',
-  location: 'Medellín',
+  location: 'Cali, Bogotá o Barranquilla',
   schedule: 'Lunes a domingo · Turnos rotativos (sin turno partido)',
   contrato: 'Término indefinido',
 };
@@ -102,7 +102,7 @@ function buildScript(answers: Answers): Record<StepId, StepDef> {
     qm_licencia: {
       botMessages: [
         '¡Perfecto! 🙌 Primero necesito verificar algunos *requisitos obligatorios* del cargo.',
-        '¿Tienes *mínimo 6 meses de experiencia certificada* en servicio al cliente (restaurante, café, retail o similares)? 🧾',
+        '¿Tienes *mínimo 6 meses de experiencia certificada* en servicio al cliente (restaurante, café, hospitalidad o similares)? 🧾',
       ],
       replies: [
         { id: 'si',  label: '✅ Sí, tengo la experiencia',  value: 'si' },
@@ -137,7 +137,7 @@ function buildScript(answers: Answers): Record<StepId, StepDef> {
       botMessages: [
         'Gracias por tu interés 🙏',
         'Lamentablemente en este momento el perfil no cumple con los requisitos mínimos para esta vacante.',
-        'Te invitamos a estar atento/a a futuras oportunidades con *Demo Restaurantes*. ¡Mucho éxito! 💪',
+        'Te invitamos a estar atento/a a futuras oportunidades con *Amore Group Talent*. ¡Mucho éxito! 💪',
       ],
       next: () => 'qm_fail',
     },
@@ -188,7 +188,7 @@ function buildScript(answers: Answers): Record<StepId, StepDef> {
     },
 
     cvb_exp_anos: {
-      botMessages: ['¿Cuántos años de experiencia tienes en *servicio al cliente o atención en restaurante*?'],
+      botMessages: ['¿Cuántos años de experiencia tienes en *servicio al cliente o atención en restaurante/hospitalidad italiana*?'],
       replies: [
         { id: 'a1', label: 'Menos de 6 meses',  value: 'menos_6m' },
         { id: 'a2', label: '6 meses – 1 año',   value: '6m_1' },
@@ -206,7 +206,7 @@ function buildScript(answers: Answers): Record<StepId, StepDef> {
 
     cvb_exp1_rol: {
       botMessages: ['¿Cuál era tu cargo o rol en esa empresa?'],
-      inputPlaceholder: 'Ej: Mesero, Auxiliar de cocina, Cajero, Domiciliario…',
+      inputPlaceholder: 'Ej: Mesero, Anfitrión, Bartender, Auxiliar de cocina…',
       next: () => 'cvb_exp1_tiempo',
     },
 
@@ -238,7 +238,7 @@ function buildScript(answers: Answers): Record<StepId, StepDef> {
 
     cvb_exp2_rol: {
       botMessages: ['¿Y cuál era tu cargo?'],
-      inputPlaceholder: 'Ej: Mesero, Auxiliar de cocina, Bartender…',
+      inputPlaceholder: 'Ej: Mesero, Anfitrión, Bartender, Auxiliar de cocina…',
       next: () => 'cvb_exp2_tiempo',
     },
 
@@ -290,16 +290,17 @@ function buildScript(answers: Answers): Record<StepId, StepDef> {
 
     ps_empresa: {
       botMessages: [
-        '¡Genial! Déjame contarte un poco sobre *Demo Restaurantes* 🏢',
+        '¡Genial! Déjame contarte un poco sobre *Amore Group* y nuestra marca *Storia D\'Amore* 🍝',
       ],
       card: {
-        title: '🏢 Demo Restaurantes',
-        subtitle: 'Líder en logística y distribución en Colombia',
+        title: '🍝 Amore Group · Storia D\'Amore',
+        subtitle: 'Una historia que nació del amor y se convirtió en inspiración',
         body: [
-          '🍽️ +10 años operando en el sector de restaurantes',
-          '📍 +25 puntos de venta en las principales ciudades',
-          '👥 Equipo de +500 colaboradores en todo el país',
-          '⭐ Empresa Great Place to Work 2024',
+          '📅 Fundada en 2017 por Juan Camilo Acosta y Alejandra Reyes en Cali',
+          '🏪 8 sedes activas en Colombia (Cali, Bogotá y Barranquilla)',
+          '👥 +1.000.000 visitantes al año',
+          '💰 Superamos $100.000M COP en ventas en 2024',
+          '⭐ Referente nacional de experiencia italiana y cultura organizacional',
         ],
       },
       replies: [{ id: 'ok', label: '¡Interesante! Continuar 👉', value: 'ok' }],
@@ -312,10 +313,10 @@ function buildScript(answers: Answers): Record<StepId, StepDef> {
         title: `🍽️ ${VACANCY.title}`,
         body: [
           `💰 Salario: ${VACANCY.salary}`,
-          `📍 Ubicación: ${VACANCY.location}`,
+          `📍 Sedes: ${VACANCY.location}`,
           `🕐 Horario: ${VACANCY.schedule}`,
           `📝 Contrato: ${VACANCY.contrato}`,
-          `✅ Beneficios: Auxilio de transporte · Auxilio de alimentación · Bonificaciones`,
+          `✅ Beneficios: Auxilio de transporte · Auxilio de alimentación · Descuentos en sedes Storia D'Amore`,
         ],
       },
       replies: [
@@ -375,7 +376,7 @@ function buildScript(answers: Answers): Record<StepId, StepDef> {
         `🎉 *¡Listo, ${nombre}!*`,
         'Tu prescreening ha sido completado exitosamente. Nuestro equipo revisará tu perfil y se comunicará contigo en las próximas *24–48 horas hábiles*.',
         '📬 Recibirás un mensaje de confirmación por este medio.',
-        'Gracias por tu tiempo y tu interés en *Demo Restaurantes*. ¡Mucho éxito! 💪',
+        'Gracias por tu tiempo y tu interés en *Amore Group Talent*. ¡Mucho éxito! 💪',
       ],
       next: () => 'ps_complete',
     },
@@ -401,7 +402,7 @@ function WaHeader() {
         <WaIcon size={22} color="#fff" />
       </div>
       <div style={{ flex: 1 }}>
-        <div style={{ color: '#fff', fontWeight: 700, fontSize: '15px', lineHeight: 1.2 }}>Alex · Demo Restaurantes</div>
+        <div style={{ color: '#fff', fontWeight: 700, fontSize: '15px', lineHeight: 1.2 }}>Alex · Amore Group Talent</div>
         <div style={{ color: '#b2dfdb', fontSize: '12px' }}>en línea</div>
       </div>
     </div>

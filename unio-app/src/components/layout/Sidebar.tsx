@@ -157,8 +157,8 @@ export default function Sidebar({ activeItem }: SidebarProps) {
       {/* Logo */}
       <div style={{ padding: '20px 20px 16px' }}>
         <img
-          src={companyLogoUrl || assetUrl('/logo-demo-restaurantes.png')}
-          alt={companyName || 'Demo Restaurantes'}
+          src={companyLogoUrl || assetUrl('/logo-amore-group.png')}
+          alt={companyName || 'Amore Group Talent'}
           style={{ maxHeight: '110px', maxWidth: '300px', width: 'auto', height: 'auto', display: 'block', objectFit: 'contain' }}
         />
       </div>

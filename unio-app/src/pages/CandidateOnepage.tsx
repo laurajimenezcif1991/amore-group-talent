@@ -276,13 +276,13 @@ export default function CandidateOnepage() {
       name: 'Informe_Medico_Ocupacional_ConductorC2.pdf',
       size: 0,
       uploadedAt: new Date('2026-06-18T10:30:00'),
-      url: '/demo-restaurantes/Informe_Medico_Ocupacional.pdf',
+      url: '/amore-group-talent/Informe_Medico_Ocupacional.pdf',
     },
     estudioSeguridad: {
       name: 'Estudio_Seguridad_Personal_ConductorC2.pdf',
       size: 0,
       uploadedAt: new Date('2026-06-19T14:15:00'),
-      url: '/demo-restaurantes/Estudio_Seguridad_Personal.pdf',
+      url: '/amore-group-talent/Estudio_Seguridad_Personal.pdf',
     },
     visitaDomiciliaria: null,
   } : { examenMedico: null, estudioSeguridad: null, visitaDomiciliaria: null };

@@ -44,7 +44,7 @@ function fmt(base: Date, offsetSlots: number) {
 function buildOpening(firstName: string, jobTitle: string): WaMsg[] {
   const base = new Date();
   return [
-    { from: 'alex', time: fmt(base, 0), text: `¡Hola ${firstName}! 👋 Soy *Alex*, asistente de selección de *Demo Restaurantes*.` },
+    { from: 'alex', time: fmt(base, 0), text: `¡Hola ${firstName}! 👋 Soy *Alex*, asistente de selección de *Amore Group Talent*.` },
     { from: 'alex', time: fmt(base, 1), text: `🎉 ¡Felicitaciones! Has completado exitosamente todas las etapas del proceso de selección para el cargo de *${jobTitle}*. ¡El equipo está muy emocionado de que te unas! 🍽️` },
     { from: 'alex', time: fmt(base, 2), text: `Para iniciar tu proceso de *vinculación*, necesitamos reunir algunos documentos. Te los comparto a continuación 📋` },
   ];
@@ -81,7 +81,7 @@ function buildConfirmation(firstName: string): WaMsg[] {
   return [
     { from: 'alex', time: fmt(base, 7), text: `¡Perfecto, ${firstName}! ✅ Recibido. Estaremos atentos a la llegada de los documentos.` },
     { from: 'alex', time: fmt(base, 8), text: `📬 Envíalos uno por uno directamente aquí. Si tienes algún inconveniente con alguno de ellos, cuéntanos y te ayudamos a gestionarlo.` },
-    { from: 'alex', time: fmt(base, 9), text: `¡Bienvenido/a al equipo de Demo Restaurantes! 🍽️ ¡Mucho éxito en este nuevo camino! 😊` },
+    { from: 'alex', time: fmt(base, 9), text: `¡Bienvenido/a al equipo de Amore Group Talent! 🍽️ ¡Mucho éxito en este nuevo camino! 😊` },
   ];
 }
 
@@ -282,7 +282,7 @@ export default function WhatsAppDocumentosModal({ isOpen, onClose, candidates, j
                 <WaIcon size={40} />
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 700, fontSize: '17px', color: '#111' }}>Solicitar documentos de ingreso</div>
-                  <div style={{ fontSize: '13px', color: '#666', marginTop: '1px' }}>Alex IA · Demo Restaurantes</div>
+                  <div style={{ fontSize: '13px', color: '#666', marginTop: '1px' }}>Alex IA · Amore Group Talent</div>
                 </div>
                 <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#999', padding: '4px' }}>
                   <X size={20} />
@@ -367,7 +367,7 @@ export default function WhatsAppDocumentosModal({ isOpen, onClose, candidates, j
                     <FileText size={16} color="white" />
                   </div>
                   <div style={{ flex: 1 }}>
-                    <div style={{ fontWeight: 700, fontSize: '14px', color: '#fff' }}>Alex IA · Demo Restaurantes</div>
+                    <div style={{ fontWeight: 700, fontSize: '14px', color: '#fff' }}>Alex IA · Amore Group Talent</div>
                     <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.8)' }}>
                       {isDone ? '✓ Solicitud enviada'
                         : isTyping ? 'escribiendo...'
