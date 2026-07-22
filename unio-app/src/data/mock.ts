@@ -2211,9 +2211,9 @@ const _vigiaPersonal: { label: string; value: string; status: 'ok' | 'warning' |
 ];
 
 const _vigiaTestSlots = [
-  { fecha: 'Sáb 21 Jun 2026', hora: '08:00 AM', lugar: 'Storia D'Amore — Sede Cali (Granada)' },
-  { fecha: 'Sáb 21 Jun 2026', hora: '09:30 AM', lugar: 'Storia D'Amore — Sede Cali (Granada)' },
-  { fecha: 'Dom 22 Jun 2026', hora: '08:00 AM', lugar: 'Storia D'Amore — Sede Cali (Chipichape)' },
+  { fecha: 'Sáb 21 Jun 2026', hora: '08:00 AM', lugar: "Storia D'Amore — Sede Cali (Granada)" },
+  { fecha: 'Sáb 21 Jun 2026', hora: '09:30 AM', lugar: "Storia D'Amore — Sede Cali (Granada)" },
+  { fecha: 'Dom 22 Jun 2026', hora: '08:00 AM', lugar: "Storia D'Amore — Sede Cali (Chipichape)" },
 ];
 
 function _mkVigia(id: string, name: string, score: number, photo: string, initials: string, color: string, city: string, years: string, aspiration: string, salaryRange: SalaryRange, stage: 'scoring' | 'prescreening' | 'entrevistas' = 'scoring', extras?: Partial<Candidate>): Candidate {
