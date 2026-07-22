@@ -509,6 +509,7 @@ export default function WaApplyFlow() {
   const [done, setDone] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const initFired = useRef(false);
 
   const script = buildScript(answers);
   const step = script[currentStep];
@@ -518,8 +519,10 @@ export default function WaApplyFlow() {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, typing]);
 
-  // Deliver bot messages for initial step on mount
+  // Deliver bot messages for initial step on mount — guard against StrictMode double-invoke
   useEffect(() => {
+    if (initFired.current) return;
+    initFired.current = true;
     deliverBotMessages('welcome', answers);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
